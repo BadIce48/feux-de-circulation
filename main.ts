@@ -27,10 +27,12 @@ function eteindre_feux_vert () {
     pins.digitalWritePin(DigitalPin.P0, 0)
 }
 function clignoter_pieton_orange () {
-    pins.digitalWritePin(DigitalPin.P0, 1)
-    basic.pause(200)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-    basic.pause(200)
+    for (let index = 0; index < 999; index++) {
+        pins.digitalWritePin(DigitalPin.P8, 1)
+        basic.pause(200)
+        pins.digitalWritePin(DigitalPin.P8, 0)
+        basic.pause(200)
+    }
 }
 function rouge () {
     pins.digitalWritePin(DigitalPin.P2, 1)
@@ -51,8 +53,8 @@ basic.forever(function () {
         eteindre_pieton_orange()
         pieton_blanc()
         basic.pause(5000)
-        clignoter_pieton_orange()
         basic.pause(5000)
+        clignoter_pieton_orange()
         éteindre_pieton_blanc()
         pieton = false
         pieton_orange()
