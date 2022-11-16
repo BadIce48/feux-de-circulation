@@ -1,5 +1,5 @@
 {
-    "name": "feux de circulation",
+    "name": "feux de circulation niveau 1",
     "description": "",
     "dependencies": {
         "core": "*",
