@@ -27,7 +27,7 @@ function eteindre_feux_vert () {
     pins.digitalWritePin(DigitalPin.P0, 0)
 }
 function clignoter_pieton_orange () {
-    for (let index = 0; index < 999; index++) {
+    for (let index = 0; index < 25; index++) {
         pins.digitalWritePin(DigitalPin.P8, 1)
         basic.pause(200)
         pins.digitalWritePin(DigitalPin.P8, 0)
@@ -52,7 +52,6 @@ basic.forever(function () {
         rouge()
         eteindre_pieton_orange()
         pieton_blanc()
-        basic.pause(5000)
         basic.pause(5000)
         clignoter_pieton_orange()
         éteindre_pieton_blanc()
